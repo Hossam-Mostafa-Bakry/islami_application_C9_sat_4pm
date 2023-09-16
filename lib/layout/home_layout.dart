@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app_c9_sat_4pm/moduls/hadeth/hadeth_view.dart';
-import 'package:islami_app_c9_sat_4pm/moduls/home/quran_view.dart';
 import 'package:islami_app_c9_sat_4pm/moduls/radio/radio_view.dart';
 import 'package:islami_app_c9_sat_4pm/moduls/settings/settings_view.dart';
 import 'package:islami_app_c9_sat_4pm/moduls/tasbeh/tasbeh_view.dart';
+
+import '../moduls/quran/quran_view.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "home_screen";
@@ -27,21 +28,12 @@ class _HomeLayoutState extends State<HomeLayout> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/background_light.png"))),
+              image: AssetImage("assets/images/background_light.png"),
+              fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          centerTitle: true,
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            "Islami",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
+          title: const Text("Islami"),
         ),
         body: screens[selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
